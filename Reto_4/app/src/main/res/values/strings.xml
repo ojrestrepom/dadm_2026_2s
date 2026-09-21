@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="subtitle">Jugador vs Android</string>
+
+    <string name="first_human">Tú comienzas</string>
+    <string name="first_computer">Android comienza</string>
+    <string name="turn_human">Tu turno</string>
+    <string name="turn_computer">Turno de Android</string>
+
+    <string name="result_tie">¡Empate!</string>
+    <string name="result_human_wins">¡Ganaste!</string>
+    <string name="result_computer_wins">¡Android ganó!</string>
+
+    <string name="new_game">Nuevo juego</string>
+
+    <string name="stats_title">Estadísticas</string>
+    <string name="stats_human_label">Tú</string>
+    <string name="stats_ties_label">Empates</string>
+    <string name="stats_computer_label">Android</string>
+</resources>
