@@ -1,10 +1,22 @@
 package co.edu.unal.tictactoe;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.MenuProvider;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +41,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainLayout),
+                (view, windowInsets) -> {
+                    Insets insets = windowInsets.getInsets(
+                            WindowInsetsCompat.Type.systemBars()
+                                    | WindowInsetsCompat.Type.displayCutout());
+                    view.setPadding(insets.left, insets.top, insets.right, insets.bottom);
+                    return windowInsets;
+                });
+        ViewCompat.requestApplyInsets(findViewById(R.id.mainLayout));
+
         mGame = new TicTacToeGame();
 
         mBoardButtons = new Button[TicTacToeGame.BOARD_SIZE];
@@ -51,8 +76,87 @@ public class MainActivity extends AppCompatActivity {
         mComputerWinsTextView = findViewById(R.id.computerWinsTextView);
         updateStats();
         startNewGame();
+        setupOptionsMenu();
     }
 
+    private void setupOptionsMenu() {
+        addMenuProvider(new MenuProvider() {
+            @Override
+            public void onCreateMenu(@NonNull Menu menu, @NonNull MenuInflater menuInflater) {
+                menuInflater.inflate(R.menu.options_menu, menu);
+            }
+
+            @Override
+            public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.new_game) {
+                    startNewGame();
+                    return true;
+                }
+                if (menuItem.getItemId() == R.id.ai_difficulty) {
+                    showDifficultyDialog();
+                    return true;
+                }
+                if (menuItem.getItemId() == R.id.quit) {
+                    showQuitDialog();
+                    return true;
+                }
+                if (menuItem.getItemId() == R.id.about) {
+                    showAboutDialog();
+                    return true;
+                }
+                return false;
+            }
+        }, this);
+    }
+
+
+    private void showDifficultyDialog() {
+        final TicTacToeGame.DifficultyLevel[] levels = {
+                TicTacToeGame.DifficultyLevel.Easy,
+                TicTacToeGame.DifficultyLevel.Harder,
+                TicTacToeGame.DifficultyLevel.Expert
+        };
+        final CharSequence[] labels = {
+                getString(R.string.difficulty_easy),
+                getString(R.string.difficulty_harder),
+                getString(R.string.difficulty_expert)
+        };
+
+        int selected = 0;
+        for (int i = 0; i < levels.length; i++) {
+            if (levels[i] == mGame.getDifficultyLevel()) {
+                selected = i;
+                break;
+            }
+        }
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.difficulty_choose)
+                .setSingleChoiceItems(labels, selected, (dialog, which) -> {
+                    mGame.setDifficultyLevel(levels[which]);
+                    dialog.dismiss();
+                    Toast.makeText(this, labels[which], Toast.LENGTH_SHORT).show();
+                })
+                .show();
+    }
+
+    private void showQuitDialog() {
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.quit)
+                .setMessage(R.string.quit_question)
+                .setCancelable(false)
+                .setPositiveButton(R.string.yes, (dialog, which) -> finish())
+                .setNegativeButton(R.string.no, null)
+                .show();
+    }
+
+    private void showAboutDialog() {
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.about)
+                .setView(R.layout.about_dialog)
+                .setPositiveButton(R.string.close, null)
+                .show();
+    }
 
     private void startNewGame() {
         mGame.clearBoard();

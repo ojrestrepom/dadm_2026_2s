@@ -12,9 +12,22 @@
     <string name="result_computer_wins">¡Android ganó!</string>
 
     <string name="new_game">Nuevo juego</string>
+    <string name="difficulty">Dificultad</string>
+    <string name="quit">Salir</string>
 
     <string name="stats_title">Estadísticas</string>
     <string name="stats_human_label">Tú</string>
     <string name="stats_ties_label">Empates</string>
     <string name="stats_computer_label">Android</string>
+    <string name="difficulty_choose">Elige la dificultad</string>
+    <string name="difficulty_easy">Fácil</string>
+    <string name="difficulty_harder">Más difícil</string>
+    <string name="difficulty_expert">Experto</string>
+    <string name="quit_question">¿Quieres salir del juego?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="about">Acerca de</string>
+    <string name="about_description">Juego de tres en raya contra Android. Reto 4.</string>
+    <string name="close">Cerrar</string>
+    <string name="about_author">Desarrollado por Juandrosa</string>
 </resources>

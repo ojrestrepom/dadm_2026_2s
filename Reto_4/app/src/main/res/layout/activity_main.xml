@@ -1,279 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
+    android:orientation="vertical"
     android:background="#F7F7F7">
 
-    <LinearLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:paddingTop="28dp"
-        android:paddingBottom="28dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorSurface" />
 
-        <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="#202124" />
-
-        <TextView
-            android:id="@+id/subtitleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/subtitle"
-            android:textSize="15sp"
-            android:textColor="#666666"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="28dp" />
-
-        <GridLayout
-            android:id="@+id/playGrid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:rowCount="3">
-
-            <Button
-                android:id="@+id/button0"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-            <Button
-                android:id="@+id/button8"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:background="@drawable/board_cell"
-                android:text=""
-                android:textSize="46sp"
-                android:textStyle="bold"
-                android:minWidth="0dp"
-                android:minHeight="0dp"
-                android:padding="0dp" />
-
-        </GridLayout>
-
-        <TextView
-            android:id="@+id/infoTextView"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:background="@drawable/status_background"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="@string/first_human"
-            android:textColor="#202124"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/newGameButton"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/new_game"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/stats_title"
-            android:textColor="#202124"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:background="#F7F7F7">
 
         <LinearLayout
-            android:id="@+id/statsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="28dp"
+            android:paddingBottom="28dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="#202124" />
+
+            <TextView
+                android:id="@+id/subtitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subtitle"
+                android:textSize="15sp"
+                android:textColor="#666666"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="28dp" />
+
+            <GridLayout
+                android:id="@+id/playGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="3">
+
+                <Button
+                    android:id="@+id/button0"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/board_cell"
+                    android:text=""
+                    android:textSize="46sp"
+                    android:textStyle="bold"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp" />
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/infoTextView"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/status_background"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@string/first_human"
+                android:textColor="#202124"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/newGameButton"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/new_game"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/stats_title"
+                android:textColor="#202124"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:id="@+id/statsLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginTop="14dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/stats_human_label"
-                    android:textColor="#666666"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/humanWinsTextView"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stats_human_label"
+                        android:textColor="#666666"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/humanWinsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textColor="#202124"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="0"
-                    android:textColor="#202124"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stats_ties_label"
+                        android:textColor="#666666"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tiesTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textColor="#202124"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/stats_ties_label"
-                    android:textColor="#666666"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tiesTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="0"
-                    android:textColor="#202124"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stats_computer_label"
+                        android:textColor="#666666"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/computerWinsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="0"
+                        android:textColor="#202124"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/stats_computer_label"
-                    android:textColor="#666666"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/computerWinsTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="0"
-                    android:textColor="#202124"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

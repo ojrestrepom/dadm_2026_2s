@@ -10,12 +10,27 @@ public class TicTacToeGame {
     public static final char COMPUTER_PLAYER = 'O';
     public static final char OPEN_SPOT = ' ';
 
+    public enum DifficultyLevel {Easy, Harder, Expert}
+
+    private DifficultyLevel mDifficultyLevel = DifficultyLevel.Expert;
+
     private final char[] mBoard = new char[BOARD_SIZE];
     private final Random mRand;
 
     public TicTacToeGame() {
         mRand = new Random();
         clearBoard();
+    }
+
+    public DifficultyLevel getDifficultyLevel() {
+        return mDifficultyLevel;
+    }
+
+    public void setDifficultyLevel(DifficultyLevel difficultyLevel) {
+        if (difficultyLevel == null) {
+            throw new IllegalArgumentException("El nivel de dificultad no puede ser null.");
+        }
+        mDifficultyLevel = difficultyLevel;
     }
 
     /**
@@ -41,14 +56,31 @@ public class TicTacToeGame {
 
 
     /**
-     * Retorna la mejor posición para el movimiento del computador.
+     * Retorna una posición para el computador según el nivel de dificultad.
      * No modifica definitivamente el tablero.
      *
-     * @return posición entre 0 y 8
+     * @return posición entre 0 y 8, o -1 si no hay posiciones disponibles
      */
     public int getComputerMove() {
+        if (mDifficultyLevel == DifficultyLevel.Easy) {
+            return getRandomMove();
+        }
 
-        // 1. Buscar una jugada que permita ganar
+        int move = getWinningMove();
+        if (move == -1 && mDifficultyLevel == DifficultyLevel.Expert) {
+            move = getBlockingMove();
+        }
+        if (move == -1) {
+            move = getRandomMove();
+        }
+
+        return move;
+    }
+
+    /**
+     * Busca una victoria inmediata sin alterar el tablero; retorna -1 si no existe.
+     */
+    private int getWinningMove() {
         for (int i = 0; i < BOARD_SIZE; i++) {
             if (mBoard[i] == OPEN_SPOT) {
                 mBoard[i] = COMPUTER_PLAYER;
@@ -62,7 +94,13 @@ public class TicTacToeGame {
             }
         }
 
-        // 2. Buscar una jugada para bloquear al jugador
+        return -1;
+    }
+
+    /**
+     * Busca un bloqueo inmediato sin alterar el tablero; retorna -1 si no existe.
+     */
+    private int getBlockingMove() {
         for (int i = 0; i < BOARD_SIZE; i++) {
             if (mBoard[i] == OPEN_SPOT) {
                 mBoard[i] = HUMAN_PLAYER;
@@ -76,14 +114,23 @@ public class TicTacToeGame {
             }
         }
 
-        // 3. Escoger aleatoriamente una posición disponible
-        int move;
+        return -1;
+    }
 
-        do {
-            move = mRand.nextInt(BOARD_SIZE);
-        } while (mBoard[move] != OPEN_SPOT);
+    /**
+     * Escoge una posición libre al azar; retorna -1 si el tablero está lleno.
+     */
+    private int getRandomMove() {
+        int[] availableMoves = new int[BOARD_SIZE];
+        int count = 0;
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            if (mBoard[i] == OPEN_SPOT) {
+                availableMoves[count] = i;
+                count++;
+            }
+        }
 
-        return move;
+        return count == 0 ? -1 : availableMoves[mRand.nextInt(count)];
     }
 
     /**
