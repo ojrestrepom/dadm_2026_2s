@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="subtitle">Jugador vs Android</string>
+
+    <string name="first_human">Tú comienzas</string>
+    <string name="first_computer">Android comienza</string>
+    <string name="turn_human">Tu turno</string>
+    <string name="turn_computer">Turno de Android</string>
+
+    <string name="result_tie">¡Empate!</string>
+    <string name="result_human_wins">¡Ganaste!</string>
+    <string name="result_computer_wins">¡Android ganó!</string>
+
+    <string name="new_game">Nuevo juego</string>
+    <string name="difficulty">Dificultad</string>
+    <string name="quit">Salir</string>
+
+    <string name="stats_title">Estadísticas</string>
+    <string name="stats_human_label">Tú</string>
+    <string name="stats_ties_label">Empates</string>
+    <string name="stats_computer_label">Android</string>
+    <string name="difficulty_choose">Elige la dificultad</string>
+    <string name="difficulty_easy">Fácil</string>
+    <string name="difficulty_harder">Más difícil</string>
+    <string name="difficulty_expert">Experto</string>
+    <string name="quit_question">¿Quieres salir del juego?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="about">Acerca de</string>
+    <string name="about_description">Juego de tres en raya contra Android. Reto 4.</string>
+    <string name="close">Cerrar</string>
+    <string name="about_author">Desarrollado por Juandrosa</string>
+    <string name="board_cell_description">Fila %1$d, columna %2$d: %3$s</string>
+    <string name="board_cell_empty">vacía</string>
+    <string name="board_cell_human">X, jugador</string>
+    <string name="board_cell_computer">O, Android</string>
+    <string name="sound">Sonido</string>
+</resources>
