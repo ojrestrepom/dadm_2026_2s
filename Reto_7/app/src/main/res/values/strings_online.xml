@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lobby_title">Triqui en línea</string>
+    <string name="lobby_description">Crea una sala o únete a otra para encontrarte con un jugador.</string>
+    <string name="lobby_local">Jugar contra Android</string>
+    <string name="lobby_connecting">Conectando… Puedes jugar contra Android mientras tanto.</string>
+    <string name="lobby_connected">Conectado</string>
+    <string name="lobby_offline">Sin conexión. Las salas se actualizarán al reconectar.</string>
+    <string name="lobby_working">Esperando confirmación del servidor…</string>
+    <string name="lobby_retry">Reintentar conexión</string>
+    <string name="lobby_auth_error">No se pudo iniciar la sesión en línea. Comprueba Internet y vuelve a intentarlo.</string>
+    <string name="lobby_permission_error">No se pudo acceder a las salas. Es necesario configurar sus reglas en Firebase.</string>
+    <string name="lobby_network_error">No se pudieron actualizar las salas. Vuelve a intentarlo.</string>
+    <string name="lobby_operation_error">No se pudo completar la operación. La sala puede estar ocupada o cerrada, o no tener permisos de acceso.</string>
+    <string name="lobby_create_room">Crear sala</string>
+    <string name="lobby_available">Salas disponibles</string>
+    <string name="lobby_empty">No hay salas disponibles. ¡Crea la primera!</string>
+    <string name="lobby_room_name">Sala %1$s</string>
+    <string name="lobby_join_room">Unirse a la sala %1$s</string>
+    <string name="lobby_waiting">Juegas con %1$s. Esperando al segundo jugador…</string>
+    <string name="lobby_ready">Juegas con %1$s. Cargando la partida…</string>
+    <string name="online_x_label">X, creador</string>
+    <string name="online_o_label">O, invitado</string>
+    <string name="online_status">Juegas con %1$s. %2$s</string>
+    <string name="online_opponent_turn">Turno de tu oponente</string>
+    <string name="online_lost">Ganó tu oponente</string>
+    <string name="online_move_error">No se confirmó la jugada. Comprueba la conexión y el turno antes de intentarlo nuevamente.</string>
+    <string name="online_load_error">No se pudo cargar la partida. Reintenta la conexión.</string>
+    <string name="lobby_close_room">Cerrar sala</string>
+    <string name="lobby_close_question">¿Quieres cerrar esta sala? Se cerrará para ambos jugadores.</string>
+    <string name="lobby_room_closed">La sala se cerró o ya no está disponible.</string>
+</resources>

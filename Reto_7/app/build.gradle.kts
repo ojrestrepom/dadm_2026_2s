@@ -1,0 +1,49 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.services)
+}
+
+android {
+    namespace = "co.edu.unal.tictactoe"
+    compileSdk {
+        version = release(37)
+    }
+
+    defaultConfig {
+        applicationId = "co.edu.unal.tictactoe"
+        minSdk = 24
+        targetSdk = 37
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            optimization {
+                enable = false
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.livedata)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.activity.ktx)
+    implementation(libs.appcompat)
+    implementation(libs.customview)
+    implementation(libs.constraintlayout)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.ext.junit)
+}

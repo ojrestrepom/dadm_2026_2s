@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "156171271061",
+    "firebase_url": "https://triquionline-reto7-default-rtdb.firebaseio.com",
+    "project_id": "triquionline-reto7",
+    "storage_bucket": "triquionline-reto7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156171271061:android:c19de59ecbf1e6beb2949c",
+        "android_client_info": {
+          "package_name": "co.edu.unal.tictactoe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFH6U3M2htuqJXaWEDUAAnJJe8LYD5EGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
