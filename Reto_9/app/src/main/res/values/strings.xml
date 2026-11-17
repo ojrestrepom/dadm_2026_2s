@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Reto_9</string>
+    <string name="location_title">Mi ubicación</string>
+    <string name="location_button">Obtener ubicación</string>
+    <string name="location_intro">Consulta tu posición actual para buscar lugares cercanos.</string>
+    <string name="location_loading">Obteniendo ubicación…</string>
+    <string name="location_denied">Concede el permiso de ubicación para continuar. Si Android no vuelve a mostrar la solicitud, puedes habilitarlo en los ajustes de la aplicación.</string>
+    <string name="location_disabled">Activa la ubicación del dispositivo y vuelve a intentarlo.</string>
+    <string name="location_unavailable">No se pudo obtener la ubicación. Vuelve a intentarlo.</string>
+    <string name="location_coordinates">Latitud: %1$.6f\nLongitud: %2$.6f</string>
+    <string name="radius_title">Radio de búsqueda</string>
+    <string name="radius_active">Radio guardado: %1$s km</string>
+    <string name="radius_input">Radio en kilómetros</string>
+    <string name="radius_error">Ingresa un número mayor que cero.</string>
+    <string name="radius_save">Guardar radio</string>
+    <string name="places_loading">Buscando puntos de interés…</string>
+    <string name="places_empty">No se encontraron lugares dentro del radio.</string>
+    <string name="places_found">Lugares cercanos: %1$d. Toca un punto para ver su nombre o un grupo para acercarte.</string>
+    <string name="places_area_large">Reduce el radio para buscar en un área más pequeña.</string>
+    <string name="places_error">No se pudo completar la búsqueda de lugares.</string>
+    <string name="places_retry">Reintentar búsqueda</string>
+    <string name="map_error">No se pudo cargar el mapa.</string>
+    <string name="map_retry">Recargar mapa</string>
+</resources>
+
+
